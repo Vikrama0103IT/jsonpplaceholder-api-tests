@@ -1,0 +1,37 @@
+
+Running 16 tests using 1 worker
+
+TC-A3-01 | Status: 201 | ID: 101 | Title length: 10000
+  ✓   1 [API Tests] › api-tests/jsonplaceholder.spec.ts:23:7 › Boundary Test — Excessively long strings › TC-A3-01: title with 10,000 characters (227ms)
+TC-A3-02 | Status: 201 | Body length: 50000
+  ✓   2 [API Tests] › api-tests/jsonplaceholder.spec.ts:45:7 › Boundary Test — Excessively long strings › TC-A3-02: body with 50,000 characters (269ms)
+TC-A3-03 | Status: 201 | ID: 101
+  ✓   3 [API Tests] › api-tests/jsonplaceholder.spec.ts:66:7 › Boundary Test — Excessively long strings › TC-A3-03: all fields with maximum length strings (103ms)
+TC-A3-04 | Status: 201 | Title: <script>alert("xss")</script>
+  ✓   4 [API Tests] › api-tests/jsonplaceholder.spec.ts:92:7 › Boundary Test — Unsupported special characters › TC-A3-04: XSS script injection in title (204ms)
+TC-A3-05 | Status: 201 | Title: '; DROP TABLE posts; --
+  ✓   5 [API Tests] › api-tests/jsonplaceholder.spec.ts:110:7 › Boundary Test — Unsupported special characters › TC-A3-05: SQL injection characters in title (103ms)
+TC-A3-06 | Status: 201 | ID: 101
+  ✓   6 [API Tests] › api-tests/jsonplaceholder.spec.ts:128:7 › Boundary Test — Unsupported special characters › TC-A3-06: null bytes and control characters (219ms)
+TC-A3-07 | Status: 201 | Title: 🔥💀 Unicode title 中文 العربية
+  ✓   7 [API Tests] › api-tests/jsonplaceholder.spec.ts:146:7 › Boundary Test — Unsupported special characters › TC-A3-07: emoji and unicode characters (212ms)
+TC-A3-08 | Status: 201 | Title: {}[]|\^~`<>
+  ✓   8 [API Tests] › api-tests/jsonplaceholder.spec.ts:164:7 › Boundary Test — Unsupported special characters › TC-A3-08: special characters — brackets, pipes, backslashes (154ms)
+TC-A3-09 | Status: 201 | Has userId: false
+  ✓   9 [API Tests] › api-tests/jsonplaceholder.spec.ts:189:7 › Boundary Test — Missing required fields › TC-A3-09: missing userId field (180ms)
+TC-A3-10 | Status: 201 | Has title: false
+  ✓  10 [API Tests] › api-tests/jsonplaceholder.spec.ts:207:7 › Boundary Test — Missing required fields › TC-A3-10: missing title field (184ms)
+TC-A3-11 | Status: 201 | Has body: false
+  ✓  11 [API Tests] › api-tests/jsonplaceholder.spec.ts:224:7 › Boundary Test — Missing required fields › TC-A3-11: missing body field (134ms)
+TC-A3-12 | Status: 201 | Response: {"id":101}
+  ✓  12 [API Tests] › api-tests/jsonplaceholder.spec.ts:241:7 › Boundary Test — Missing required fields › TC-A3-12: completely empty request body (171ms)
+TC-A3-13 | Status: 201 | Response: {"userId":null,"title":null,"body":null,"id":101}
+  ✓  13 [API Tests] › api-tests/jsonplaceholder.spec.ts:255:7 › Boundary Test — Missing required fields › TC-A3-13: null values for all fields (142ms)
+TC-A3-14 | Status: 201 | userId: not-a-number | title: 12345
+  ✓  14 [API Tests] › api-tests/jsonplaceholder.spec.ts:273:7 › Boundary Test — Missing required fields › TC-A3-14: wrong data types — strings where numbers expected (156ms)
+TC-A3-15 | Status: 201 | userId: -1
+  ✓  15 [API Tests] › api-tests/jsonplaceholder.spec.ts:291:7 › Boundary Test — Missing required fields › TC-A3-15: negative userId value (88ms)
+TC-A3-16 | Status: 201 | ID: 101 ✅ Baseline passed
+  ✓  16 [API Tests] › api-tests/jsonplaceholder.spec.ts:317:7 › Baseline — Valid request sanity check › TC-A3-16: valid request returns 201 with correct response shape (140ms)
+
+  16 passed (3.7s)
